@@ -82,6 +82,19 @@ class Medicion
 			}
 		}
 
+		inline bool esPositivo(float p) {
+
+			if(p < 0) {
+
+				return false;
+
+			} else {
+
+				return true;
+			}
+
+		}
+
 		inline void setFecha(Fecha f) { 
 
 			_f = f; 

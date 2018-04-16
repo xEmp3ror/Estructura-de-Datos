@@ -11,6 +11,7 @@
 #include <stdlib.h>
 
 #include "Medicion.hpp"
+#include "macros.hpp"
 
 
 // COMPLETAR
@@ -23,10 +24,23 @@ void ed::Medicion::leerMedicion() {
 	Fecha f;
 	bool aux = false;
 	int dia, mes, anno;
+	
+	while(aux!=true) {
 
-	std::cout<<"Introduzca los datos de la nueva medicion: ";
-	std::cin>>p;
-	p = toUnsigned(p);
+		std::cout<<"Introduzca los datos de la nueva medicion: ";
+		std::cin>>p;
+
+		if(esPositivo(p)) {
+
+			aux = true;
+
+		} else {
+
+			std::cout<<BIRED<<"ATENCION: "<<IYELLOW<<"El numero introducido es negativo. Introduzca un numero positivo."<<RESET<<std::endl;
+		}
+	}
+
+	aux = false;
 
 	while(aux!=true) {
 
@@ -88,17 +102,42 @@ namespace ed{
 // Sobrecarga del operador de salida
 ostream &operator<<(ostream &stream, ed::Medicion const &medicion)
 {
-  // COMPLETAR
 
-  return stream;
+	std::cout << BIBLUE << "Precipitación: ";
+	stream << medicion.getPrecipitacion();
+	std::cout << RESET << std::endl;
+	std::cout << BIGREEN << "Fecha: ";
+	stream << medicion.getFecha();
+	std::cout << RESET << std::endl;
+
+	return stream;
 }
 
 // Sobrecarga del operador de entrada
 istream &operator>>(istream &stream, ed::Medicion &medicion)
 {
- // COMPLETAR
+ 
+ 	float val;
+ 	int fecha;
+ 	Fecha f;
 
-  return stream;
+
+
+	stream >> val;
+	medicion.setPrecipitacion(val);
+
+	stream >> fecha;
+	f.setDia(fecha);
+
+	stream >> fecha;
+	f.setMes(fecha);
+
+	stream >> fecha;
+	f.setAgno(fecha);
+
+	medicion.setFecha(f);
+
+	return stream;
 } 
 
 } // Fin del espacio de nombres ed

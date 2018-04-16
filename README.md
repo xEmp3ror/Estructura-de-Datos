@@ -9,7 +9,7 @@ En este repositorio se encontrarán todas las prácticas resueltas.
 
 # PRÁCTICA 1: Vectores libres de tres dimensiones.
 
-Entregado: *Lunes, 5 de marzo de 2018 a las 15h11.*
+Entregado: **Lunes, 5 de marzo de 2018 a las 15h11.**
 
 Nota obtenida: 6,5.
 
@@ -45,6 +45,7 @@ Nota obtenida: 6,5.
 # PRÁCTICA 2: Provincia compuesta por una lista de municipios.
 
 Entregado: *Lunes, 9 de abril de 2018 a las 15h46.*
+
 Nota obtenida: 6,0.
 
 ## Errores detectados durante la corrección de la práctica:
@@ -74,27 +75,27 @@ Nota obtenida: TBD.
 
 + Clase `MonticuloMediciones`:
 
-	++ `Medicion getElement(i: Entero)`. *DONE.*
-	++ `Void setElement()`.
-	++ `Entero getLeftChild(i: Entero)`. *DONE.*
-	++ `Entero getRightChild(i: Entero)`. *DONE.*
-	++ `Entero getParent(i: Entero)`. *DONE.*
-	++ `Void shiftUp(i: Entero)`. *DONE.*
-	++ `Void shiftDown(i: Entero)`. *DONE.*
-	++ `Bool has(medicion: Medicion)`.
+	+ `Medicion getElement(i: Entero)`. **DONE.**
+	+ `Void setElement()`.
+	+ `Entero getLeftChild(i: Entero)`. **DONE.**
+	+ `Entero getRightChild(i: Entero)`. **DONE.**
+	+ `Entero getParent(i: Entero)`. **DONE.**
+	+ `Void shiftUp(i: Entero)`. **DONE.**
+	+ `Void shiftDown(i: Entero)`. **DONE.**
+	+ `Bool has(medicion: Medicion)`.
 
-	++ `Bool isEmpty()`. *DONE.*
-	++ `Entero size()`. *DONE.*
-	++ `Medicion top()`. *DONE.*
+	+ `Bool isEmpty()`. **DONE.**
+	+ `Entero size()`. **DONE.**
+	+ `Medicion top()`. **DONE.**
 
-	++ `Void insert(medicion: Medicion)`.
-	++ `Void remove()`.
-	++ `Void removeAll()`.
-	++ `Void modify()`.
+	+ `Void insert(medicion: Medicion)`.
+	+ `Void remove()`.
+	+ `Void removeAll()`.
+	+ `Void modify()`.
 
-	++ `MonticuloMediciones operador=(m: MonticuloMediciones)`.
+	+ `MonticuloMediciones operador=(m: MonticuloMediciones)`.
 
-	++ `Void print()`.
+	+ `Void print()`.
 
 ## Errores detectados durante la corrección de la práctica:
 

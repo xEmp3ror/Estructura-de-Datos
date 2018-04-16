@@ -76,13 +76,13 @@ Nota obtenida: TBD.
 + Clase `MonticuloMediciones`:
 
 	+ `Medicion getElement(i: Entero)`. **DONE.**
-	+ `Void setElement()`.
+	+ `Void setElement(i: Entero, medicion: Medicion)`. **DONE.**
 	+ `Entero getLeftChild(i: Entero)`. **DONE.**
 	+ `Entero getRightChild(i: Entero)`. **DONE.**
 	+ `Entero getParent(i: Entero)`. **DONE.**
 	+ `Void shiftUp(i: Entero)`. **DONE.**
 	+ `Void shiftDown(i: Entero)`. **DONE.**
-	+ `Bool has(medicion: Medicion)`.
+	+ `Bool has(medicion: Medicion)`. **DONE.**
 
 	+ `Bool isEmpty()`. **DONE.**
 	+ `Entero size()`. **DONE.**

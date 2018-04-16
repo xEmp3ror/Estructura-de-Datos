@@ -44,7 +44,7 @@ Nota obtenida: 6,5.
 
 # PRÁCTICA 2: Provincia compuesta por una lista de municipios.
 
-Entregado: *Lunes, 9 de abril de 2018 a las 15h46.*
+Entregado: **Lunes, 9 de abril de 2018 a las 15h46.**
 
 Nota obtenida: 6,0.
 
@@ -84,16 +84,20 @@ Nota obtenida: TBD.
 	+ `Void shiftDown(i: Entero)`. **DONE.**
 	+ `Bool has(medicion: Medicion)`.
 
+
 	+ `Bool isEmpty()`. **DONE.**
 	+ `Entero size()`. **DONE.**
 	+ `Medicion top()`. **DONE.**
+
 
 	+ `Void insert(medicion: Medicion)`.
 	+ `Void remove()`.
 	+ `Void removeAll()`.
 	+ `Void modify()`.
 
+
 	+ `MonticuloMediciones operador=(m: MonticuloMediciones)`.
+
 
 	+ `Void print()`.
 

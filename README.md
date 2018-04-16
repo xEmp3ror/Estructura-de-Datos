@@ -1,5 +1,5 @@
 # Estructura de Datos
-Todos los apuntes y archivos de la asignatura de Estructura de Datos impartida por Nicolás Luis Fernández García durante el curso 2018.
+Todos los apuntes y archivos de la asignatura de Estructura de Datos impartida por _Nicolás Luis Fernández García_ durante el curso 2018.
 
 En este repositorio se encontrarán todas las prácticas resueltas.
 

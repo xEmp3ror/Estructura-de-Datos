@@ -158,7 +158,8 @@ class Medicion
 
    //! \name Funciones externas de la clase Medicion: sobrecarga de los operadores de flujo
 
-		// COMPLETAR EL CÓDIGO E INCLUIR LOS COMENTARIOS DE DOXYGEN
+		ostream &operator<<(ostream &stream, ed::Medicion const &medicion);
+		istream &operator>>(istream &stream, ed::Medicion &medicion);
 
 
 

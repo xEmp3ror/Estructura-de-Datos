@@ -3,11 +3,11 @@ Todos los apuntes y archivos de la asignatura de Estructura de Datos impartida p
 
 En este repositorio se encontrarán todas las prácticas resueltas.
 
-##PRÁCTICA 1: Vectores libres de tres dimensiones.
+## PRÁCTICA 1: Vectores libres de tres dimensiones.
 
 Nota obtenida: 6,5.
 
-#Errores detectados durante la corrección de la práctica:
+# Errores detectados durante la corrección de la práctica:
 
 + Debería haber incluido alguna opción nueva e "interesante" en el menú.
 
@@ -36,11 +36,11 @@ Nota obtenida: 6,5.
 
 + También debe comentar con "entusiasmo" todas las funciones de la clase Vector3D
 
-##PRÁCTICA 2: Provincia compuesta por una lista de municipios.
+## PRÁCTICA 2: Provincia compuesta por una lista de municipios.
 
 Nota obtenida: 6,0.
 
-#Errores detectados durante la corrección de la práctica:
+# Errores detectados durante la corrección de la práctica:
 
 + Al cargar desde un fichero, no controla el final.
 Además, al cargar un fichero, debe comprobar que un municipio no existe antes de insertarlo.

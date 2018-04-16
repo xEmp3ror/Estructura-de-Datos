@@ -44,7 +44,7 @@ void ed::Medicion::leerMedicion() {
 
 	while(aux!=true) {
 
-		std::cout<<"Introduzca el dia: ";
+		std::cout<<"Introduzca el día: ";
 		std::cin>>dia;
 
 		if(dia>0 && dia<32) {
@@ -72,7 +72,7 @@ void ed::Medicion::leerMedicion() {
 
 	while(aux!=true) {
 
-		std::cout<<"Introduzca el mes: ";
+		std::cout<<"Introduzca el año: ";
 		std::cin>>anno;
 
 		if(anno>1900 && anno<2099) {
@@ -118,7 +118,6 @@ istream &operator>>(istream &stream, ed::Medicion &medicion)
 {
  
  	float val;
- 	int fecha;
  	Fecha f;
 
 
@@ -126,14 +125,7 @@ istream &operator>>(istream &stream, ed::Medicion &medicion)
 	stream >> val;
 	medicion.setPrecipitacion(val);
 
-	stream >> fecha;
-	f.setDia(fecha);
-
-	stream >> fecha;
-	f.setMes(fecha);
-
-	stream >> fecha;
-	f.setAgno(fecha);
+	f.leerFecha();
 
 	medicion.setFecha(f);
 

@@ -106,15 +106,15 @@ void ed::Fecha::leerFecha()
 {
   double dia, mes, agno;
 
-  std::cout << "\n Lectura de una fecha" << std::endl;
+  std::cout << "\n Leyendo fecha. Siga las instrucciones." << std::endl;
 
-  std::cout << " Día --> ";
+  std::cout << " Introduzca el día: ";
   std::cin >> dia;
 
-  std::cout << " Mes --> ";
+  std::cout << " Introduzca el mes: ";
   std::cin >> mes;
 
-  std::cout << " Año --> ";
+  std::cout << " Introduzca el año: ";
   std::cin >> agno;
 
   // Se asignan los valores leídos a los atributos del vertice   

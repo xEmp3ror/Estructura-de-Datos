@@ -5,7 +5,7 @@ En este repositorio se encontrarán todas las prácticas resueltas.
 
 ## Work in progress.
 
-_Nada por el momento..._
++ Cambiar todos los toUnisgned() para que anuncie el error de que es negativo.
 
 # PRÁCTICA 1: Vectores libres de tres dimensiones.
 

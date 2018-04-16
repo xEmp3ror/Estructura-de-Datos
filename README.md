@@ -3,7 +3,7 @@ Todos los apuntes y archivos de la asignatura de Estructura de Datos impartida p
 
 En este repositorio se encontrarán todas las prácticas resueltas.
 
-# WORK IN PROGRESS.
+## Work in progress.
 
 _Nada por el momento..._
 

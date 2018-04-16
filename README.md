@@ -9,6 +9,8 @@ En este repositorio se encontrarán todas las prácticas resueltas.
 
 # PRÁCTICA 1: Vectores libres de tres dimensiones.
 
+Entregado: *Lunes, 5 de marzo de 2018 a las 15h11.*
+
 Nota obtenida: 6,5.
 
 ## Errores detectados durante la corrección de la práctica:
@@ -42,6 +44,7 @@ Nota obtenida: 6,5.
 
 # PRÁCTICA 2: Provincia compuesta por una lista de municipios.
 
+Entregado: *Lunes, 9 de abril de 2018 a las 15h46.*
 Nota obtenida: 6,0.
 
 ## Errores detectados durante la corrección de la práctica:
@@ -60,3 +63,39 @@ Además, al cargar un fichero, debe comprobar que un municipio no existe antes d
 + Debe comentar con doxygen todas las funciones y lo debe hacer con "entusiasmo".
 
 + Debe revisar y corregir todos los avisos de doxygen.
+
+# PRÁCTICA 3: Montículo de mediciones de precipitaciones de lluvia.
+
+Entrega: _Lunes, 7 de mayo de 2018 a las 16h00._
+
+Nota obtenida: TBD.
+
+## Por hacer:
+
++ Clase `MonticuloMediciones`:
+
+	++ `Medicion getElement(i: Entero)`. *DONE.*
+	++ `Void setElement()`.
+	++ `Entero getLeftChild(i: Entero)`. *DONE.*
+	++ `Entero getRightChild(i: Entero)`. *DONE.*
+	++ `Entero getParent(i: Entero)`. *DONE.*
+	++ `Void shiftUp(i: Entero)`. *DONE.*
+	++ `Void shiftDown(i: Entero)`. *DONE.*
+	++ `Bool has(medicion: Medicion)`.
+
+	++ `Bool isEmpty()`. *DONE.*
+	++ `Entero size()`. *DONE.*
+	++ `Medicion top()`. *DONE.*
+
+	++ `Void insert(medicion: Medicion)`.
+	++ `Void remove()`.
+	++ `Void removeAll()`.
+	++ `Void modify()`.
+
+	++ `MonticuloMediciones operador=(m: MonticuloMediciones)`.
+
+	++ `Void print()`.
+
+## Errores detectados durante la corrección de la práctica:
+
+*La práctica aún no se ha corregido.*

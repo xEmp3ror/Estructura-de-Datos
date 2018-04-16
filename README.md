@@ -19,7 +19,7 @@ Nota obtenida: 6,5.
 
 + En la función crossProduct, se recomienda devolver una referencia a un objeto de la clase Vector3D para mejorar la eficiencia.
 
-+ + En la función angulo(), debe controlar el argumento del arco coseno para que esté en dominio [-1.0,1.0]
++ En la función angulo(), debe controlar el argumento del arco coseno para que esté en dominio [-1.0,1.0]
 
         valor = this->dotProduct(v)/(this->modulo()*v.modulo();
 

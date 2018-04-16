@@ -3,6 +3,10 @@ Todos los apuntes y archivos de la asignatura de Estructura de Datos impartida p
 
 En este repositorio se encontrarán todas las prácticas resueltas.
 
+# WORK IN PROGRESS.
+
+_Nada por el momento..._
+
 # PRÁCTICA 1: Vectores libres de tres dimensiones.
 
 Nota obtenida: 6,5.

@@ -11,7 +11,7 @@ En este repositorio se encontrarán todas las prácticas resueltas.
 
 Entregado: **Lunes, 5 de marzo de 2018 a las 15h11.**
 
-Nota obtenida: 6,5.
+Nota obtenida: 6,0.
 
 ## Errores detectados durante la corrección de la práctica:
 
@@ -84,20 +84,16 @@ Nota obtenida: TBD.
 	+ `Void shiftDown(i: Entero)`. **DONE.**
 	+ `Bool has(medicion: Medicion)`.
 
-
 	+ `Bool isEmpty()`. **DONE.**
 	+ `Entero size()`. **DONE.**
 	+ `Medicion top()`. **DONE.**
-
 
 	+ `Void insert(medicion: Medicion)`.
 	+ `Void remove()`.
 	+ `Void removeAll()`.
 	+ `Void modify()`.
 
-
 	+ `MonticuloMediciones operador=(m: MonticuloMediciones)`.
-
 
 	+ `Void print()`.
 

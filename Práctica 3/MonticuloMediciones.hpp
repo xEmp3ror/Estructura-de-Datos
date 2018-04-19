@@ -44,7 +44,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 	      \sa     Medicion getElement(int pos); 
 	    */
 
-		Medicion getElement(int pos) const {
+		inline Medicion getElement(int pos) const {
 
 			#ifndef NDEBUG
 				assert(pos >= 0 && pos < size());
@@ -53,7 +53,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 			return monticulo.at(pos);	
 		}
 
-		void setElement(int pos, Medicion m) {
+		inline void setElement(int pos, Medicion m) {
 			
 			#ifndef NDEBUG
 				assert(pos >= 0 && pos < size());
@@ -77,7 +77,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 	      \sa     int getLeftChild(const int pos); 
 	    */
 
-		int getLeftChild(const int pos) {
+		inline int getLeftChild(const int pos) {
 
 			return pos*2+1;
 		}
@@ -89,7 +89,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 	      \post   Ninguna
 	      \sa     int getRightChild(const int pos); 
 	    */
-		int getRightChild(const int pos) {
+		inline int getRightChild(const int pos) {
 
 			return pos*2+2;
 		}
@@ -101,7 +101,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 	      \post   Ninguna
 	      \sa     int getParent(const int pos); 
 	    */
-		int getParent(const int pos) {
+		inline int getParent(const int pos) {
 
 			return (pos-1)/2;
 		}

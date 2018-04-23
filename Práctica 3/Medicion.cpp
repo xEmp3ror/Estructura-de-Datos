@@ -24,23 +24,12 @@ void ed::Medicion::leerMedicion() {
 	Fecha f;
 	bool aux = false;
 	int dia, mes, anno;
-	
-	while(aux!=true) {
 
-		std::cout<<"Introduzca los datos de la nueva medicion: ";
-		std::cin>>p;
+	std::cout<<"Introduzca los datos de la nueva medicion: ";
+	std::cin>>p;
+	std::cout<<std::endl<<std::endl;
 
-		if(esPositivo(p)) {
-
-			aux = true;
-
-		} else {
-
-			std::cout<<BIRED<<"ATENCION: "<<IYELLOW<<"El numero introducido es negativo. Introduzca un numero positivo."<<RESET<<std::endl;
-		}
-	}
-
-	aux = false;
+	esPositivo(p);
 
 	while(aux!=true) {
 

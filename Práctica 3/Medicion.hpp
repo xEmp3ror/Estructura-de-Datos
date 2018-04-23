@@ -17,6 +17,7 @@
 // Definición de la clase Fecha
 #include "Fecha.hpp"
 
+#include "macros.hpp"
 
 // Para la sobrecarga de los operadores de flujo: << y >>
 using std::istream;
@@ -48,7 +49,8 @@ class Medicion
 			_f.setMes(mes);
 			_f.setAgno(anno);
 
-			_precip = toUnsigned(precipitacion);
+			esPositivo(precipitacion);
+			_precip = precipitacion;
 
 		}
 
@@ -70,7 +72,7 @@ class Medicion
 
 	//! \name Funciones de modificación de la clase Medicion
 
-		inline float toUnsigned(float p) {
+		inline float toUnsigned(float p) { //DEPRECATED.
 
 			if(p < 0) {
 
@@ -82,17 +84,20 @@ class Medicion
 			}
 		}
 
-		inline bool esPositivo(float p) {
+		inline bool esPositivo(float &precipitacion) {
 
-			if(p < 0) {
+			if(precipitacion < 0) {
 
-				return false;
+				while(precipitacion < 0) {
 
-			} else {
-
-				return true;
+				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"El dato de precipitación introducido es "<<BLINK<<"negativo"<<RESET<<BYELLOW<<". Por favor, introduzca un dato postivo: ";
+				std::cin>>precipitacion;
+				
+				}
 			}
 
+			
+			return true;
 		}
 
 		inline void setFecha(Fecha f) { 

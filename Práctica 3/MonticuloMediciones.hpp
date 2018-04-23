@@ -221,7 +221,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 
 		//! \name Función de escritura
 
-		// COMPLETAR
+		void print();
 
 	}; // Clase MonticuloMediciones
 

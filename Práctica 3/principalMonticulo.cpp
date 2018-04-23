@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 	ed::cargarMonticuloDeFichero(nombreFicheroEntrada,monticulo);
 
 	// QUITAR EL COMENTARIO CUANDO SE HAYA CODIFICADO LA FUNCIÓN 
-	// std::cout << "Tamaño del montículo " << monticulo.size() << std::endl;
+	std::cout << "Tamaño del montículo " << monticulo.size() << std::endl;
 
 	// Se graba el montículo en el fichero: las mediciones son grabadas en orden descendente
 	std::cout << "Se graba el montículo en el fichero " << nombreFicheroSalida << std::endl;

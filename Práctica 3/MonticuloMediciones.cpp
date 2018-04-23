@@ -141,5 +141,31 @@
 	}
 
 
+	void ed::MonticuloMediciones::print() {
 
+		if (isEmpty() == true) {
+
+			std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BLINK<<"vacío"<<RESET<<BYELLOW<<"."<<std::endl;
+		}
+
+		int tam = size();
+		Medicion aux;
+		Fecha f;
+
+		std::string fecha, f1, f2, f3;
+
+		for (int i = 0; i < tam; i++) {
+
+			aux = getElement(i);
+			f = aux.getFecha();
+
+			f1 = f.getDia();
+			f2 = f.getMes();
+			f3 = f.getAgno();
+
+			fecha = f1 + " de " + f2 + " de " + f3;
+
+			std::cout<<BYELLOW<<"Medición del día "<<BIGREEN<<fecha<<BYELLOW<<": "<<BIBLUE<<aux.getPrecipitacion()<<BYELLOW<<" litros por metro cuadrado."<<RESET<<std::endl;
+		}
+	}
 

@@ -95,7 +95,7 @@ Nota obtenida: TBD.
 
 	+ `MonticuloMediciones operador=(m: MonticuloMediciones)`.
 
-	+ `Void print()`.
+	+ `Void print()`. **DONE.**
 
 ## Errores detectados durante la corrección de la práctica:
 

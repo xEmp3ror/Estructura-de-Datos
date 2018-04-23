@@ -88,10 +88,10 @@ Nota obtenida: TBD.
 	+ `Entero size()`. **DONE.**
 	+ `Medicion top()`. **DONE.**
 
-	+ `Void insert(medicion: Medicion)`.
-	+ `Void remove()`.
-	+ `Void removeAll()`.
-	+ `Void modify()`.
+	+ `Void insert(medicion: Medicion)`. **DONE.**
+	+ `Void remove()`. **DONE.**
+	+ `Void removeAll()`. **DONE.**
+	+ `Void modify()`. **DONE.**
 
 	+ `MonticuloMediciones operador=(m: MonticuloMediciones)`.
 

@@ -53,6 +53,16 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 			return monticulo.at(pos);	
 		}
 
+		/*! 
+	      \fn     Medicion setElement(int pos);
+	      \brief  Función que modifica el elemento i-ésimo del montículo.
+	      \param  pos posición actual
+	      \param  m Objeto de tipo medición.
+	      \pre    pos debe ser mayor que 0 y menor que el tamaño del montículo.
+	      \post   Ninguna
+	      \sa     Medicion setElement(int pos); 
+	    */
+
 		inline void setElement(int pos, Medicion m) {
 			
 			#ifndef NDEBUG
@@ -113,18 +123,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 	      \post   Ninguna
 	      \sa     void shiftUp(int pos); 
 	    */
-		void shiftUp(int pos) {
-
-			if (pos > 0) {
-
-				if(monticulo[pos].getPrecipitacion() > monticulo[getParent(pos)].getPrecipitacion()) { 
-
-					std::swap (monticulo[pos], monticulo[getParent(pos)]);
-
-					shiftUp(getParent(pos));
-				}
-			}
-		}
+		void shiftUp(int pos);
 		/*! 
 	      \fn     void shiftDown(int pos);
 	      \brief  Función que permite hundir el elemento de la posicion pos hasta su posicion correcta
@@ -133,45 +132,16 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 	      \post   Ninguna
 	      \sa     void shiftDown(int pos); 
 	    */
-		void shiftDown(int pos) {
-
-			int n = pos, 
-				lChild = getLeftChild(pos), 
-				rChild = getRightChild(pos);
-
-			if( (unsigned)lChild < monticulo.size() and monticulo[lChild].getPrecipitacion() > monticulo[n].getPrecipitacion()) {
-
-				n = lChild;
-			}
-
-			if((unsigned)rChild < monticulo.size() and monticulo[rChild].getPrecipitacion() > monticulo[n].getPrecipitacion()) {
-
-				n = rChild;
-			}
-			if (pos != n) {
-
-				std::swap (monticulo[pos],monticulo[n]);
-
-				shiftDown(n);
-			}
-		}
-
-		bool has(Medicion m) {
-
-			int pos;
-
-			for(pos = 0; pos < size(); pos++) {
-
-				if (m == monticulo.at(pos)) {
-
-					return true;
-				
-				} else {
-
-					return false;
-				}
-			}
-		}
+		void shiftDown(int pos);
+		/*! 
+	      \fn     bool has(Medicion m);
+	      \brief  Función que comprueba si la medición está incluida en el montículo.
+	      \param  m Objeto de tipo medicion a comprobar.
+	      \pre    Ninguna
+	      \post   Ninguna
+	      \sa     void has(Medicion m); 
+	    */
+		bool has(Medicion m);
 
 	  /////////////////////////////////////////////////////////////////////////////////////
 
@@ -233,7 +203,13 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 
 		//! \name Operaciones de modificación
 
-		// COMPLETAR EL CÓDIGO E INCLUIR LOS COMENTARIOS DE DOXYGEN
+		void insert(Medicion &m);
+
+		void remove();
+
+		void removeAll();
+
+		void modify(Medicion &m);
 
 
 		//! \name Operadores

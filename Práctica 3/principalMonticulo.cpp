@@ -45,8 +45,10 @@ int main(int argc, char *argv[])
 	
 	// 
 	std::cout << "Se cargan las mediciones desde el fichero " << nombreFicheroEntrada << std::endl;
-	std::cout << " Se crea un montículo de máximos " << std::endl;
+	std::cout << "Se crea un montículo de máximos." << std::endl;
 	ed::cargarMonticuloDeFichero(nombreFicheroEntrada,monticulo);
+
+	monticulo.print();
 
 	// QUITAR EL COMENTARIO CUANDO SE HAYA CODIFICADO LA FUNCIÓN 
 	std::cout << "Tamaño del montículo " << monticulo.size() << std::endl;

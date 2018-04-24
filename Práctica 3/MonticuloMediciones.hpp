@@ -204,7 +204,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 
 		//! \name Operaciones de modificación
 
-		void insert(Medicion &m);
+		void insert(Medicion const &m);
 
 		void remove();
 

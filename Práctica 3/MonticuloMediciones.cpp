@@ -25,7 +25,12 @@
 
 			if(monticulo.at(pos).getPrecipitacion() > monticulo.at(getParent(pos)).getPrecipitacion()) { 
 
-				std::swap(monticulo.at(pos), monticulo.at(getParent(pos)));
+				std::swap(monticulo.at(pos), monticulo.at(getParent(pos))); //NO INTERCAMBIA.
+
+//				ed::Medicion aux = getElement(pos);
+
+//	            setElement(getParent(pos), aux);  //a = aux a = b b = aux
+//	            setElement(pos, getElement(getParent(pos)));
 
 				shiftUp(getParent(pos));
 			}
@@ -76,7 +81,10 @@
 
 // Métodos públicos de la clase MonticuloMediciones
 
-	void ed::MonticuloMediciones::insert(ed::Medicion &m) {
+	void ed::MonticuloMediciones::insert(ed::Medicion const &m) {
+		
+//		monticulo.at(size()) = m;
+//		shiftUp(size());
 
 		monticulo.push_back(m);
 		shiftUp(size()-1);		
@@ -102,6 +110,8 @@
 		} else {
 
 		ed::Medicion aux2 = getElement(size() - 1);
+
+//		monticulo.pop_back(size() - 1);
 
 		setElement(0, aux2);
 		shiftDown(0);
@@ -148,10 +158,15 @@
 
 		if (isEmpty() == true) {
 
-			std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BLINK<<"vacío"<<RESET<<BYELLOW<<"."<<std::endl;
+			std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BLINK<<"vacío"<<RESET<<BYELLOW<<"."<<RESET<<std::endl;
 		}
 
-		int tam = size();
+		for (int i = 0; i < size(); i++) {
+				
+            	getElement(i).escribirMedicion();
+        	}
+
+/*		int tam = size();
 		Medicion aux;
 		Fecha f;
 
@@ -170,5 +185,5 @@
 
 			std::cout<<BYELLOW<<"Medición del día "<<BIGREEN<<fecha<<BYELLOW<<": "<<BIBLUE<<aux.getPrecipitacion()<<BYELLOW<<" litros por metro cuadrado."<<RESET<<std::endl;
 		}
-	}
+*/	}
 

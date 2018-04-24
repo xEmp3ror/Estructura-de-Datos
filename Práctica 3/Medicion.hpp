@@ -160,6 +160,11 @@ class Medicion
 
 		void leerMedicion();
 
+		inline void escribirMedicion() {
+
+			std::cout<<BIGREEN<<getFecha().getDia()<<"-"<<getFecha().getMes()<<"-"<<getFecha().getAgno()<<" "<<getPrecipitacion()<<std::endl;
+		}
+
 
 }; // Fin de la definición de la clase Medicion
 

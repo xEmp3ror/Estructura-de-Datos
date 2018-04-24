@@ -69,9 +69,10 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 				assert(pos >= 0 && pos < size());
 			#endif 
 
-			Medicion aux(m);
+//			Medicion aux(m);
 
-			monticulo.at(pos) = aux;
+			monticulo.at(pos).setFecha(m.getFecha());
+			monticulo.at(pos).setPrecipitacion(m.getPrecipitacion());
 
 			#ifndef NDEBUG
 				assert(getElement(pos) == m);
@@ -214,7 +215,20 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 
 		//! \name Operadores
    
-		// COMPLETAR
+		inline MonticuloMediciones & operator=(MonticuloMediciones const &m) {
+
+			//MonticuloMediciones aux;
+
+   			if (this != &m)
+   			{
+   				for (int i = 0; i < size(); ++i) {
+
+   					getElement(i) = m.getElement(i);;
+   				}
+   			}
+
+   			return *this;
+		} 
  
 
 		////////////////////////////////////////////////////////////////////

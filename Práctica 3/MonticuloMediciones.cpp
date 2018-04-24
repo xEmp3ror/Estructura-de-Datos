@@ -77,15 +77,8 @@
 
 	void ed::MonticuloMediciones::insert(ed::Medicion &m) {
 
-		if(size() == 0) {
-
-			setElement(0, m);
-
-		} else {
-
-			setElement(size(), m);
-			shiftUp(size());
-		}
+		monticulo.push_back(m);
+		shiftUp(size()-1);		
 	}
 
 	void ed::MonticuloMediciones::remove() {
@@ -100,10 +93,19 @@
 			return;
 		}
 
-		ed::Medicion aux = getElement(size() - 1);
+		if(size() == 1) {
+			
+			ed::Medicion aux;
+			setElement(0, aux);
 
-		setElement(0, aux);
+		} else {
+
+		ed::Medicion aux2 = getElement(size() - 1);
+
+		setElement(0, aux2);
 		shiftDown(0);
+
+		}
 	}
 
 	void ed::MonticuloMediciones::removeAll() {

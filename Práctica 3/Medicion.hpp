@@ -90,7 +90,7 @@ class Medicion
 
 				while(precipitacion < 0) {
 
-				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"El dato de precipitación introducido es "<<BLINK<<"negativo"<<RESET<<BYELLOW<<". Por favor, introduzca un dato postivo: ";
+				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"El dato de precipitación introducido es "<<BLINK<<"negativo"<<RESET<<BYELLOW<<". Por favor, introduzca un dato postivo: "<<RESET;
 				std::cin>>precipitacion;
 				
 				}

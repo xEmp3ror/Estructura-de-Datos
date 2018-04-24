@@ -25,15 +25,15 @@ void ed::Medicion::leerMedicion() {
 	bool aux = false;
 	int dia, mes, anno;
 
-	std::cout<<"Introduzca los datos de la nueva medicion: ";
+	std::cout<<BIBLUE<<"Introduzca los datos de la nueva medicion: "<<YELLOW;
 	std::cin>>p;
-	std::cout<<std::endl<<std::endl;
+	std::cout<<RESET<<std::endl<<std::endl;
 
 	esPositivo(p);
 
 	while(aux!=true) {
 
-		std::cout<<"Introduzca el día: ";
+		std::cout<<BYELLOW<<"Introduzca el día: "<<GREEN;
 		std::cin>>dia;
 
 		if(dia>0 && dia<32) {
@@ -47,7 +47,7 @@ void ed::Medicion::leerMedicion() {
 
 	while(aux!=true) {
 
-		std::cout<<"Introduzca el mes: ";
+		std::cout<<BYELLOW<<"Introduzca el mes: "<<GREEN;
 		std::cin>>mes;
 
 		if(mes>0 && mes<13) {
@@ -61,7 +61,7 @@ void ed::Medicion::leerMedicion() {
 
 	while(aux!=true) {
 
-		std::cout<<"Introduzca el año: ";
+		std::cout<<BYELLOW<<"Introduzca el año: "<<GREEN;
 		std::cin>>anno;
 
 		if(anno>1900 && anno<2099) {
@@ -89,6 +89,14 @@ void ed::Medicion::leerMedicion() {
 namespace ed{
 
 // Sobrecarga del operador de salida
+
+ostream &operator<<(ostream &stream, ed::Medicion const &medicion) {
+	
+	stream<<medicion.getFecha().getDia()<<"-"<<medicion.getFecha().getMes()<<"-"<<medicion.getFecha().getAgno()<<" "<<medicion.getPrecipitacion()<<" "<<std::endl;
+	return stream;
+}
+
+/*
 ostream &operator<<(ostream &stream, ed::Medicion const &medicion)
 {
 
@@ -101,22 +109,29 @@ ostream &operator<<(ostream &stream, ed::Medicion const &medicion)
 
 	return stream;
 }
+*/
 
 // Sobrecarga del operador de entrada
 istream &operator>>(istream &stream, ed::Medicion &medicion)
 {
- 
- 	float val;
- 	Fecha f;
+
+ 	std::string cadena;
+
+	std::getline(stream,cadena,'-');
+    int dia = atoi(cadena.c_str());
+
+	std::getline(stream,cadena,'-');
+    int mes = atoi(cadena.c_str());
+
+	std::getline(stream,cadena,' ');
+	int agno = atoi(cadena.c_str());
 
 
+	std::getline(stream, cadena);
+	medicion.setPrecipitacion(atof(cadena.c_str()));
 
-	stream >> val;
-	medicion.setPrecipitacion(val);
-
-	f.leerFecha();
-
-	medicion.setFecha(f);
+	ed::Fecha *aux = new ed::Fecha(dia, mes, agno);
+	medicion.setFecha(*aux);
 
 	return stream;
 } 

@@ -15,6 +15,8 @@
 namespace ed
 {
 
+	int menu();
+	
 	void cargarMonticuloDeFichero(std::string const & nombreFichero, ed::MonticuloMediciones & monticulo); 
 
 

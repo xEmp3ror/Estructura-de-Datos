@@ -217,13 +217,25 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
    
 		inline MonticuloMediciones & operator=(MonticuloMediciones const &m) {
 
-			//MonticuloMediciones aux;
+/*   		if (this != &m) {
 
-   			if (this != &m)
-   			{
    				for (int i = 0; i < size(); ++i) {
 
    					getElement(i) = m.getElement(i);;
+   				}
+   			}
+
+   			return *this;
+		} 
+*/
+			Medicion aux;
+
+   			if (this != &m) {
+
+   				for (int i = 0; i < m.size(); i++) {
+
+   					aux = getElement(i);
+   					insert(aux);
    				}
    			}
 

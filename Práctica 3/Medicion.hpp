@@ -57,10 +57,13 @@ class Medicion
 		Medicion(const ed::Medicion & m) {
 
 			Fecha aux;
+			float precip;
 
 			aux = m.getFecha();
-
 			_f = aux;
+
+			precip = m.getPrecipitacion();
+			_precip = precip;
 
 		}
 
@@ -72,7 +75,7 @@ class Medicion
 
 	//! \name Funciones de modificación de la clase Medicion
 
-		inline float toUnsigned(float p) { //DEPRECATED.
+/*		inline float toUnsigned(float p) { //DEPRECATED.
 
 			if(p < 0) {
 
@@ -83,7 +86,7 @@ class Medicion
 				return p;
 			}
 		}
-
+*/
 		inline bool esPositivo(float &precipitacion) {
 
 			if(precipitacion < 0) {
@@ -112,7 +115,7 @@ class Medicion
 
 		inline void setPrecipitacion(float p) {
 
-			p = toUnsigned(p); //PREGUNTAR SI HACE FALTA ASERTO.
+			esPositivo(p);
 
 			_precip = p;
 

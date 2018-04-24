@@ -77,7 +77,6 @@ void ed::Medicion::leerMedicion() {
 
 	setFecha(f);
 	setPrecipitacion(p);
-
 }
 
 

@@ -21,16 +21,16 @@
 
 	void ed::MonticuloMediciones::shiftUp(int pos) {
 
-			if (pos > 0) {
+		if (pos > 0) {
 
-				if(monticulo[pos].getPrecipitacion() > monticulo[getParent(pos)].getPrecipitacion()) { 
+			if(monticulo.at(pos).getPrecipitacion() > monticulo.at(getParent(pos)).getPrecipitacion()) { 
 
-					std::swap (monticulo[pos], monticulo[getParent(pos)]);
+				std::swap(monticulo.at(pos), monticulo.at(getParent(pos)));
 
-					shiftUp(getParent(pos));
-				}
+				shiftUp(getParent(pos));
 			}
 		}
+	}
 
 	void ed::MonticuloMediciones::shiftDown(int pos) {
 
@@ -47,6 +47,7 @@
 
 			n = rChild;
 		}
+
 		if (pos != n) {
 
 			std::swap (monticulo[pos],monticulo[n]);

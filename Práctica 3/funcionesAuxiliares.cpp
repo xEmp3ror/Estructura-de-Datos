@@ -63,7 +63,7 @@ void ed::grabarMonticuloEnFichero(std::string const & nombreFichero,
 
  		while(!aux.isEmpty()) {
 
- 			fichero<<aux.top();
+ 			fichero << aux.top();
  			aux.remove();
  		}
  	}

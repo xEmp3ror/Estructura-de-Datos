@@ -56,10 +56,12 @@ void ed::grabarMonticuloEnFichero(std::string const & nombreFichero,
 							      ed::MonticuloMediciones const & monticulo)
 {
 
-	ed::MonticuloMediciones aux = monticulo;
+	ed::MonticuloMediciones aux;
  	std::ofstream fichero(nombreFichero.c_str());
 
  	if(fichero.is_open()) {
+
+ 		aux = monticulo;
 
  		while(!aux.isEmpty()) {
 

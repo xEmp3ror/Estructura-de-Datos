@@ -23,17 +23,21 @@
 
 		if (pos > 0) {
 
-			if(monticulo.at(pos).getPrecipitacion() > monticulo.at(getParent(pos)).getPrecipitacion()) { 
+			if(getElement(pos).getPrecipitacion() > getElement(getParent(pos)).getPrecipitacion()) { 
 
-				std::swap(monticulo.at(pos), monticulo.at(getParent(pos))); //NO INTERCAMBIA.
+//				std::swap(getElement(pos), getElement(getParent(pos))); //NO INTERCAMBIA.
 
 //				ed::Medicion aux = getElement(pos);
-
-//	            setElement(getParent(pos), aux);  //a = aux a = b b = aux
+//	            setElement(getParent(pos), aux);
 //	            setElement(pos, getElement(getParent(pos)));
 
-				shiftUp(getParent(pos));
+	            ed::Medicion aux = getElement(getParent(pos));
+	            setElement(getParent(pos), getElement(pos));
+	            setElement(pos, aux);
+
 			}
+
+			shiftUp(getParent(pos));
 		}
 	}
 
@@ -43,19 +47,23 @@
 			lChild = getLeftChild(pos), 
 			rChild = getRightChild(pos);
 
-		if( (unsigned)lChild < monticulo.size() and monticulo[lChild].getPrecipitacion() > monticulo[n].getPrecipitacion()) {
+		if(((unsigned)lChild <= monticulo.size()) and monticulo[lChild].getPrecipitacion() > monticulo[n].getPrecipitacion()) {
 
 			n = lChild;
 		}
 
-		if((unsigned)rChild < monticulo.size() and monticulo[rChild].getPrecipitacion() > monticulo[n].getPrecipitacion()) {
+		if(((unsigned)rChild <= monticulo.size()) and monticulo[rChild].getPrecipitacion() > monticulo[n].getPrecipitacion()) {
 
 			n = rChild;
 		}
 
 		if (pos != n) {
 
-			std::swap (monticulo[pos],monticulo[n]);
+//			std::swap (monticulo[pos],monticulo[n]);
+
+            ed::Medicion aux = getElement(pos);
+            setElement(getParent(pos), getElement(n));
+            setElement(pos, aux);
 
 			shiftDown(n);
 		}
@@ -96,7 +104,7 @@
 			assert(isEmpty() == false);
 		#endif
 
-		if(isEmpty()) {
+/*		if(isEmpty()) {
 
 			std::cout<<BIRED<<"El montículo está vacío."<<RESET<<std::endl;
 			return;
@@ -116,6 +124,14 @@
 		setElement(0, aux2);
 		shiftDown(0);
 
+		}
+*/	
+		setElement(0, monticulo.back());
+		monticulo.erase(monticulo.end());
+
+		if (0 < size()) {
+
+			shiftDown(0);
 		}
 	}
 
@@ -158,7 +174,7 @@
 
 		if (isEmpty() == true) {
 
-			std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BLINK<<"vacío"<<RESET<<BYELLOW<<"."<<RESET<<std::endl;
+			std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BIRED<<"vacío"<<RESET<<BYELLOW<<"."<<RESET<<std::endl;
 		}
 
 		for (int i = 0; i < size(); i++) {

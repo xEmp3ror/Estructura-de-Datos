@@ -14,6 +14,8 @@
 // Para controlar las precondiciones y postcondiciones mediante asertos
 #include <cassert>
 
+#include <cstdlib>
+
 // Definición de la clase Fecha
 #include "Fecha.hpp"
 
@@ -43,14 +45,17 @@ class Medicion
 
 	//! \name Constructor de la clase Medicion
 
-		Medicion(int dia=1, int mes=1, int anno=1, float precipitacion = 0.0) {
+		Medicion(Fecha fecha = Fecha(1,1,1), float precipitacion = 0.0) {
 
-			_f.setDia(dia);
-			_f.setMes(mes);
-			_f.setAgno(anno);
+			_f = fecha;
 
 			esPositivo(precipitacion);
 			_precip = precipitacion;
+
+			#ifndef NDEBUG
+   				assert(getFecha() == fecha);
+   				assert((abs(getPrecipitacion() - precipitacion)) < COTA_ERROR);
+			#endif
 
 		}
 
@@ -64,6 +69,11 @@ class Medicion
 
 			precip = m.getPrecipitacion();
 			_precip = precip;
+
+			#ifndef NDEBUG
+   				assert(getFecha() == m.getFecha());
+   				assert((abs(getPrecipitacion() - m.getPrecipitacion())) < COTA_ERROR);
+			#endif
 
 		}
 
@@ -93,7 +103,7 @@ class Medicion
 
 				while(precipitacion < 0) {
 
-				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"El dato de precipitación introducido es "<<BLINK<<"negativo"<<RESET<<BYELLOW<<". Por favor, introduzca un dato postivo: "<<RESET;
+				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"El dato de precipitación introducido es "<<BIRED<<"negativo"<<RESET<<BYELLOW<<". Por favor, introduzca un dato postivo: "<<RESET;
 				std::cin>>precipitacion;
 				
 				}
@@ -116,11 +126,10 @@ class Medicion
 		inline void setPrecipitacion(float p) {
 
 			esPositivo(p);
-
-			_precip = p;
+			_precip = p;			
 
 			#ifndef NDEBUG
-				assert(getPrecipitacion() == p);
+				assert((abs(getPrecipitacion() - p)) < COTA_ERROR);
 			#endif
 		}
 
@@ -141,7 +150,19 @@ class Medicion
 
 		Medicion & operator = (Medicion const & m) {
 
-			Fecha f;
+			if (this != &m) {
+
+				setFecha(m.getFecha());
+				setPrecipitacion(m.getPrecipitacion());
+
+				#ifndef NDEBUG
+					assert(getFecha() == m.getFecha());
+					assert((abs(getPrecipitacion() - m.getPrecipitacion())) < COTA_ERROR);
+				#endif
+
+			}	
+
+/*			Fecha f;
 			float precip;
 
 			Medicion *n = new Medicion;
@@ -152,7 +173,9 @@ class Medicion
 			n -> setPrecipitacion(precip);
 			n -> setFecha(f);
 
-			return *n;
+*/			
+
+			return *this;
 		}
 
 
@@ -162,7 +185,8 @@ class Medicion
 
 		inline void escribirMedicion() {
 
-			std::cout<<BIGREEN<<getFecha().getDia()<<"-"<<getFecha().getMes()<<"-"<<getFecha().getAgno()<<" "<<getPrecipitacion()<<std::endl;
+			std::cout<<BYELLOW<<"Medición del día "<<BIGREEN<<getFecha().getDia()<<"/"<<getFecha().getMes()<<"/"<<getFecha().getAgno()<<BYELLOW<<": "<<BIBLUE<<getPrecipitacion()<<BYELLOW<<" litros por metro cuadrado."<<RESET<<std::endl;
+			//std::cout<<BIGREEN<<getFecha().getDia()<<"-"<<getFecha().getMes()<<"-"<<getFecha().getAgno()<<" "<<getPrecipitacion()<<std::endl;
 		}
 
 

@@ -91,7 +91,7 @@ int main() {
 
 			if(monticulo.isEmpty()) {
 
-				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BLINK<<"vacío"<<RESET<<BYELLOW<<"."<<std::endl;
+				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BIRED<<"vacío"<<RESET<<BYELLOW<<"."<<std::endl;
 				break;
 			
 			} else {
@@ -110,7 +110,7 @@ int main() {
 
 			if(monticulo.isEmpty()) {
 
-				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BLINK<<"vacío"<<RESET<<BYELLOW<<"."<<std::endl;
+				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BIRED<<"vacío"<<RESET<<BYELLOW<<"."<<std::endl;
 				break;
 			
 			} else {
@@ -141,7 +141,7 @@ int main() {
 
 			if(monticulo.isEmpty()) {
 
-				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BLINK<<"vacío"<<RESET<<BYELLOW<<"."<<std::endl;
+				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BIRED<<"vacío"<<RESET<<BYELLOW<<"."<<std::endl;
 				break;
 			
 			} else {

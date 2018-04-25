@@ -44,13 +44,13 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 	      \sa     Medicion getElement(int pos); 
 	    */
 
-		inline Medicion getElement(int pos) const {
+		inline Medicion getElement(int const &pos) const {
 
 			#ifndef NDEBUG
 				assert(pos >= 0 && pos < size());
 			#endif 
 
-			return monticulo.at(pos);	
+			return monticulo[pos];	
 		}
 
 		/*! 
@@ -190,7 +190,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 	      \post   El valor devuelto debe ser el superior
 	      \sa     
 	    */
-		inline Medicion top() const { 
+		inline Medicion top() { 
 
 			return monticulo.front();
 
@@ -234,8 +234,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 
    				for (int i = 0; i < m.size(); i++) {
 
-   					aux = getElement(i);
-   					insert(aux);
+   					this -> monticulo.push_back(m.getElement(i));
    				}
    			}
 

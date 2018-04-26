@@ -43,7 +43,30 @@
 
 	void ed::MonticuloMediciones::shiftDown(int pos) {
 
-		int n = pos, 
+		int n = pos;
+		int lc = getLeftChild(pos);
+		int rc = getRightChild(pos);
+		ed::Medicion aux;
+		ed::Medicion aux2;
+
+		if((lc < size() - 1) && (getElement(lc).getPrecipitacion() > getElement(n).getPrecipitacion())) {
+
+			n = lc;
+		}
+		if((rc < size() - 1) && (getElement(rc).getPrecipitacion() > getElement(n).getPrecipitacion())) {
+
+			n = rc;
+		}
+		if(pos != n) {
+
+			aux = getElement(pos);
+			aux2 = getElement(n);
+			setElement(pos,aux2);
+			setElement(n,aux);
+			shiftDown(n);
+		}
+
+/*		int n = pos, 
 			lChild = getLeftChild(pos), 
 			rChild = getRightChild(pos);
 
@@ -67,7 +90,7 @@
 
 			shiftDown(n);
 		}
-	}
+*/	}
 
 	bool ed::MonticuloMediciones::has(Medicion m) {
 

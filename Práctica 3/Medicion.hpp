@@ -105,6 +105,16 @@ class Medicion
 
 				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"El dato de precipitación introducido es "<<BIRED<<"negativo"<<RESET<<BYELLOW<<". Por favor, introduzca un dato postivo: "<<RESET;
 				std::cin>>precipitacion;
+
+					while(std::cin.fail()) {
+
+				        std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"El dato de precipitación introducido no se corresponde con un "<<BIRED<<"numero positivo"<<RESET<<BYELLOW<<". Por favor, introduzca un dato postivo: "<<RESET;
+				        std::cin.clear();
+				        std::cin.ignore(256,'\n');
+				        std::cin >> precipitacion;
+
+				        esPositivo(precipitacion);
+    				}
 				
 				}
 			}

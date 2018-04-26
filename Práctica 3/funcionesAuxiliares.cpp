@@ -38,12 +38,12 @@ void ed::cargarMonticuloDeFichero(std::string const & nombreFichero, ed::Monticu
  		}
 
 		std::cout<<BIGREEN<<"Archivo cargado con exito."<<RESET<<std::endl;
-//		std::cin.ignore();
+		std::cin.ignore();
  	
  	} else {
 
- 		std::cout<<BIRED<<"Error al cargar <"<<BIYELLOW<<nombreFichero<<BIRED<<"> Es posible que no exista el fichero o este corrupto."<<RESET<<std::endl;
-// 		std::cin.ignore();
+ 		std::cout<<BIRED<<"Error al cargar <"<<BIYELLOW<<nombreFichero<<BIRED<<">. Es posible que no exista el fichero o este corrupto."<<RESET<<std::endl;
+ 		std::cin.ignore();
  		return;
  	}
 

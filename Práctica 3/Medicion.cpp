@@ -25,16 +25,33 @@ void ed::Medicion::leerMedicion() {
 	bool aux = false;
 	int dia, mes, anno;
 
-	std::cout<<BIBLUE<<"Introduzca los datos de la nueva medicion: "<<YELLOW;
+	std::cout<<BYELLOW<<"Introduzca los datos de la nueva medicion. "<<BCYAN<<"[Numero positivo]: "<<YELLOW;
 	std::cin>>p;
-	std::cout<<RESET<<std::endl<<std::endl;
 
-	esPositivo(p);
+	while(std::cin.fail()) {
 
+        std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"El dato de precipitación introducido no se corresponde con un "<<BIRED<<"numero positivo"<<RESET<<BYELLOW<<". Por favor, introduzca un dato postivo: "<<YELLOW;
+        std::cin.clear();
+        std::cin.ignore(256,'\n');
+        std::cin >> p;
+
+        esPositivo(p);
+    }
+
+	
 	while(aux!=true) {
 
-		std::cout<<BYELLOW<<"Introduzca el día: "<<GREEN;
+		std::cout<<BYELLOW<<"Introduzca el día."<<BCYAN<<" [Rango 1-31]: "<<YELLOW;
 		std::cin>>dia;
+
+		while(std::cin.fail()) {
+
+	        std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"El dia introducido no se corresponde con un "<<BIRED<<"numero entre 1 y 31"<<RESET<<BYELLOW<<". Por favor, introduzca un dato postivo: "<<YELLOW;
+	        std::cin.clear();
+	        std::cin.ignore(256,'\n');
+	        std::cin >> dia;
+
+    	}
 
 		if(dia>0 && dia<32) {
 
@@ -47,8 +64,17 @@ void ed::Medicion::leerMedicion() {
 
 	while(aux!=true) {
 
-		std::cout<<BYELLOW<<"Introduzca el mes: "<<GREEN;
+		std::cout<<BYELLOW<<"Introduzca el mes. "<<BCYAN<<"[Rango 1-12]: "<<YELLOW;
 		std::cin>>mes;
+
+		while(std::cin.fail()) {
+
+	        std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"El mes introducido no se corresponde con un "<<BIRED<<"numero entre 1 y 12"<<RESET<<BYELLOW<<". Por favor, introduzca un dato postivo: "<<YELLOW;
+	        std::cin.clear();
+	        std::cin.ignore(256,'\n');
+	        std::cin >> mes;
+
+    	}
 
 		if(mes>0 && mes<13) {
 
@@ -61,8 +87,17 @@ void ed::Medicion::leerMedicion() {
 
 	while(aux!=true) {
 
-		std::cout<<BYELLOW<<"Introduzca el año: "<<GREEN;
+		std::cout<<BYELLOW<<"Introduzca el año. "<<BCYAN<<"[Rango 1900-2099]: "<<GREEN;
 		std::cin>>anno;
+
+		while(std::cin.fail()) {
+
+	        std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"El año introducido no se corresponde con un "<<BIRED<<"numero entre 1900 y 2099"<<RESET<<BYELLOW<<". Por favor, introduzca un dato postivo: "<<RESET;
+	        std::cin.clear();
+	        std::cin.ignore(256,'\n');
+	        std::cin >> anno;
+
+    	}
 
 		if(anno>1900 && anno<2099) {
 

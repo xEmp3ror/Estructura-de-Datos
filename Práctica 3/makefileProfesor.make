@@ -1,4 +1,4 @@
-NAME=Principal
+NAME=principalMonticulo
 
 #
 OBJECTS = $(NAME).o funcionesAuxiliares.o MonticuloMediciones.o Medicion.o Fecha.o

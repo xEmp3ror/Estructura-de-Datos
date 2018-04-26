@@ -106,7 +106,9 @@ int main() {
 
 			std::cout << "[6] BORRAR LA CABEZA DEL MONTICULO." << std::endl;
 
-			std::endl<<std::cout<<BIGREEN<<"INFORMACION: "<<BLUE<<"Esta opcion no eliminara la medicion mas reciente del monticulo."<<RESET<<std::endl;
+			std::cout<<std::endl;
+
+			std::cout<<BIGREEN<<"INFORMACION: "<<BLUE<<"Esta opcion no eliminara la medicion mas reciente del monticulo."<<RESET<<std::endl;
 
 			if(monticulo.isEmpty()) {
 
@@ -117,7 +119,7 @@ int main() {
 
 				monticulo.remove();
 
-				std::cout<<BIGREN<<"La cabeza se ha eliminado con exito."<<RESET<<std::endl;
+				std::cout<<BIGREEN<<"La cabeza se ha eliminado con exito."<<RESET<<std::endl;
 			}
 
 			break;

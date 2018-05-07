@@ -67,35 +67,19 @@ Además, al cargar un fichero, debe comprobar que un municipio no existe antes d
 
 # PRÁCTICA 3: Montículo de mediciones de precipitaciones de lluvia.
 
-Entrega: _Lunes, 7 de mayo de 2018 a las 16h00._
+Entregado: **Lunes, 9 de abril de 2018 a las 15h28.**
 
 Nota obtenida: TBD.
 
-## Por hacer:
+## Errores detectados durante la corrección de la práctica:
 
-+ Clase `MonticuloMediciones`:
+*La práctica aún no se ha corregido.*
 
-	+ `Medicion getElement(i: Entero)`. **DONE.**
-	+ `Void setElement(i: Entero, medicion: Medicion)`. **DONE.**
-	+ `Entero getLeftChild(i: Entero)`. **DONE.**
-	+ `Entero getRightChild(i: Entero)`. **DONE.**
-	+ `Entero getParent(i: Entero)`. **DONE.**
-	+ `Void shiftUp(i: Entero)`. **DONE.**
-	+ `Void shiftDown(i: Entero)`. **DONE.**
-	+ `Bool has(medicion: Medicion)`. **DONE.**
+# PRÁCTICA 4: Árbol abarcador de coste mínimo de un grafo no dirigido.
 
-	+ `Bool isEmpty()`. **DONE.**
-	+ `Entero size()`. **DONE.**
-	+ `Medicion top()`. **DONE.**
+Entrega: _Miércoles, 30 de mayo de 2018 a las 09h00._
 
-	+ `Void insert(medicion: Medicion)`. **DONE.**
-	+ `Void remove()`. **DONE.**
-	+ `Void removeAll()`. **DONE.**
-	+ `Void modify()`. **DONE.**
-
-	+ `MonticuloMediciones operador=(m: MonticuloMediciones)`.
-
-	+ `Void print()`. **DONE.**
+Nota obtenida: TBD
 
 ## Errores detectados durante la corrección de la práctica:
 

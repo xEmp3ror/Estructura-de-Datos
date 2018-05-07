@@ -53,10 +53,12 @@
 
 			n = lc;
 		}
+
 		if((rc < size() - 1) && (getElement(rc).getPrecipitacion() > getElement(n).getPrecipitacion())) {
 
 			n = rc;
 		}
+
 		if(pos != n) {
 
 			aux = getElement(pos);
@@ -90,7 +92,10 @@
 
 			shiftDown(n);
 		}
-*/	}
+*/	
+
+		//ASERTO PLS
+	}
 
 	bool ed::MonticuloMediciones::has(Medicion m) {
 
@@ -106,6 +111,28 @@
 		}
 
 		return false;
+	}
+
+	void ed::MonticuloMediciones::totalMediciones() {
+
+		float precip[14] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+		char meses[13][20] = {" ","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+
+		for(int i = 0; i < size(); i++) {
+
+			int mes = getElement(i).getFecha().getMes();
+			precip[mes] += getElement(i).getPrecipitacion();
+			precip[13] += getElement(i).getPrecipitacion();
+		}
+
+		for(int i = 1; i < 13; i++) {
+
+			std::cout<<BIYELLOW<<"Precipitaciones en el mes de "<<BIGREEN<<meses[i]<<BIYELLOW<<" : "<<BICYAN<<precip[i]<<"mm."<<RESET<<std::endl;
+		}
+
+		std::cout<<std::endl;
+		std::cout<<BIYELLOW<<"Precipitaciones totales en el año "<<BIGREEN<<getElement(1).getFecha().getAgno()<<BIYELLOW<<" : "<<BICYAN<<precip[13]<<"mm."<<RESET<<std::endl;
 	}
 
 ////////////////////////////////////////////////////////////////////////////////////7

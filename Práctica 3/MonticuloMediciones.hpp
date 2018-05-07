@@ -38,6 +38,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 		/*! 
 	      \fn     Medicion getElement(int pos);
 	      \brief  Función que devuelve el elemento pedido
+	      \attention Se utiliza el modificador const en la definición de la función
 	      \param  pos posición actual
 	      \pre    pos debe ser mayor que 0 y menor que el tamaño del montículo.
 	      \post   Ninguna
@@ -82,6 +83,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
  		/*! 
 	      \fn     int getLeftChild(const int pos);
 	      \brief  Función que permite conocer la posicion del hijo izquierdo
+	      \attention Se utiliza el modificador const en la definición de la función
 	      \param  pos posición actual
 	      \pre    Ninguna
 	      \post   Ninguna
@@ -95,6 +97,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 		/*! 
 	      \fn     int getRightChild(const int pos);
 	      \brief  Función que permite conocer la posicion del hijo derecho
+	      \attention Se utiliza el modificador const en la definición de la función
 	      \param  pos posición actual
 	      \pre    Ninguna
 	      \post   Ninguna
@@ -107,6 +110,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 		/*! 
 	      \fn     int getParent(const int pos);
 	      \brief  Función que permite conocer la posicion del Padre
+	      \attention Se utiliza el modificador const en la definición de la función
 	      \param  pos posición actual
 	      \pre    Ninguna
 	      \post   Ninguna
@@ -163,7 +167,8 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 
 		/*! 
 	      \fn     bool isEmpty()
-	      \brief  Función que permite comprobar que el monticulo de mediciones esta vacio
+	      \brief  Función que permite comprobar que el monticulo de mediciones esta vacio.
+	      \attention Se utiliza el modificador const en la definición de la función
 	      \return 
 	      \pre    Ninguna
 	      \post   Ninguna
@@ -175,6 +180,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 		/*! 
 	      \fn     Medicion size()
 	      \brief  Función que devuelve el numero de elementos del monticulo de mediciones.
+	      \attention Se utiliza el modificador const en la definición de la función
 	      \return 
 	      \pre    Ninguna
 	      \post   Ninguna
@@ -185,6 +191,7 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 		/*! 
 	      \fn     Medicion top()
 	      \brief  Función que permite acceder al primer elemento del monticulo de mediciones.
+	      \attention Se utiliza el modificador const en la definición de la función
 	      \return 
 	      \pre    Monticulo no vacio
 	      \post   El valor devuelto debe ser el superior
@@ -200,21 +207,77 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 
 		}
 
+		/*! 
+	      \fn     Medicion totalMediciones()
+	      \brief  Funcion que imprime por pantalla el total de mediciones.
+	      \return 
+	      \pre    
+	      \post   
+	      \sa     
+	    */
+		void totalMediciones();
+
 		////////////////////////////////////////////////////////////
 
 		//! \name Operaciones de modificación
 
+		/*! 
+	      \fn     void insert(Medicion const &m)
+	      \brief  Función que permite insertar una medición en el monticulo actual.
+	      \param  Objeto de tipo medicion pasado como referencia constante.
+	      \return Funcion void.
+	      \post   El monticulo no debe de estar vacío.
+	      \sa     
+	    */
+
 		void insert(Medicion const &m);
+
+		/*! 
+	      \fn     void remove()
+	      \brief  Función que permite eliminar una medición en el monticulo actual.
+	      \param  Ninguno.
+	      \return Funcion void.
+	      \pre    Monticulo no vacio
+	      \sa     
+	    */
 
 		void remove();
 
+		/*! 
+	      \fn     void removeAll()
+	      \brief  Función que permite eliminar todas las mediciones en el monticulo actual.
+	      \param  Ninguno.
+	      \return Funcion void.
+	      \pre    Ninguna.
+	      \post   Monticulo no vacio.
+	      \sa     
+	    */
+
 		void removeAll();
+
+		/*! 
+	      \fn     void modify()
+	      \brief  Modifica la posición que ocupa la cima y actualiza el montículo para mantenerlo ordenado.
+	      \param  Ninguno.
+	      \return Funcion void.
+	      \pre    Monticulo no vacio
+	      \post   La medicion de la cima debe existir.
+	      \sa     
+	    */
 
 		void modify(Medicion &m);
 
 
 		//! \name Operadores
    
+		/*! 
+		\brief     Operador de asignación: operador que "copia" un monticulo en otro monticulo
+		\attention Se sobrecarga el operador de asignación "="
+		\note      Función inline
+		\warning   Se requiere que las funciones tengan el modificador const
+		\param     objeto: objeto de la clase MonticuloMediciones pasado como referencia constante
+		\pre       El objeto es distinto del objeto actual
+		*/
 		inline MonticuloMediciones & operator=(MonticuloMediciones const &m) {
 
 /*   		if (this != &m) {
@@ -246,6 +309,11 @@ class MonticuloMediciones : public MonticuloMedicionesInterfaz
 
 		//! \name Función de escritura
 
+		/*! 
+		\brief Escribe por pantalla los valores de los atributos de todas las mediciones
+		\pre   No puede estar vacio
+		\post  Ninguna
+		*/
 		void print();
 
 	}; // Clase MonticuloMediciones

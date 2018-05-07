@@ -24,12 +24,41 @@ void ed::cargarMonticuloDeFichero(std::string const & nombreFichero, ed::Monticu
 
  	std::ifstream fichero(nombreFichero.c_str());
  	ed::Medicion aux;
+ 	std::string ans;
 
  	if(fichero.is_open()) {
 
-// 		monticulo.removeAll(); //Limpiamos el montículo por si hubiera algo antes.
+ 		if (monticulo.size() != 0) {
+
+ 			std::cout<<BIRED<<"ATENCION: "<<BYELLOW<<"Ya hay cargado un montículo con "<<BIGREEN<<monticulo.size()<<BYELLOW<<" elementos. ¿Desea borrarlo? (y/n): "<<RESET;
+ 			std::cin>>ans;
+
+ 			if (ans == "y") {
+
+ 				monticulo.removeAll(); //Limpiamos el montículo por si hubiera algo antes.
+ 				std::cout<<BIRED<<"Monticulo anterior borrado."<<RESET<<std::endl;
+ 				std::cout<<std::endl;
+
+ 			} else {
+
+ 				std::cout<<BIBLUE<<"No se han hecho modificaciones al montículo."<<RESET<<std::endl;
+ 				std::cin.ignore();
+
+ 				return;
+ 			}
+ 		}
 
  		while(fichero >> aux) {
+
+ 			if(aux.getPrecipitacion() < 0) {
+
+				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"Se ha detectado una anomalía al cargar el fichero: "<<BIRED<<"Se ha detectado una precipitación negativa."<<RESET<<BYELLOW<<". Deshaciendo cambios. Abortando..."<<RESET;
+				monticulo.removeAll();
+
+				std::cin.ignore();
+
+				return;
+ 			}
 
  			if(aux.getFecha().esCorrecta()) {
 
@@ -120,6 +149,11 @@ int ed::menu() {
 
 	PLACE(posicion++,10);
 	std::cout << "[8] MOSTRAR CUANTOS ELEMENTOS HAY EN EL MONTICULO.";
+
+	posicion++; //Para separar conjuntos de opciones.
+
+	PLACE(posicion++,10);
+	std::cout << "[9] MOSTRAR TOTAL DE PRECIPITACIONES DEL MES.";
 
 	//////////////////////////////////////////////////////////////////////////////
 	posicion++;

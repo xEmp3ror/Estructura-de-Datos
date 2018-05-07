@@ -87,7 +87,7 @@ void ed::Medicion::leerMedicion() {
 
 	while(aux!=true) {
 
-		std::cout<<BYELLOW<<"Introduzca el año. "<<BCYAN<<"[Rango 1900-2099]: "<<GREEN;
+		std::cout<<BYELLOW<<"Introduzca el año. "<<BCYAN<<"[Rango 1900-2099]: "<<YELLOW;
 		std::cin>>anno;
 
 		while(std::cin.fail()) {

@@ -1,3 +1,10 @@
+/*!
+ \mainpage Menú que operará con la clase mediciones.
+ \author   Rafael Román de los Reyes
+ \date     2018-5-7
+ \version  1.0
+*/
+
 #include <iostream>
 
 #include <string>
@@ -152,6 +159,21 @@ int main() {
 			}
 
 			break;
+
+			case 9:
+
+			std::cout << "[9] MOSTRAR TOTAL DE PRECIPITACIONES DEL MES." << std::endl;
+
+			if(monticulo.isEmpty()) {
+
+				std::cout<<BIRED<<"ATENCIÓN: "<<BYELLOW<<"No se puede operar con el montículo porque está "<<BIRED<<"vacío"<<RESET<<BYELLOW<<"."<<std::endl;
+				break;
+			
+			} else {
+
+				monticulo.totalMediciones();
+				break;
+			}
 
 			default:
 				std::cout << BIRED;

@@ -1,7 +1,7 @@
-/*!
+	/*!
  \mainpage Implementación de un montículo de mediciones
- \author   Nicolás Luis Fernández García
- \date     2018-3-7
+ \author   Nicolás Luis Fernández García y Rafael Román de los Reyes
+ \date     2018-5-7
  \version  1.0
 */
 

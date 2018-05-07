@@ -17,9 +17,25 @@ namespace ed
 
 	int menu();
 	
+	/*!
+    \brief  Carga los datos de la clase desde un fichero
+    \note   Función en el cpp
+    \note	El fichero tiene que estar normalizado
+    \param  monticulo : tipo MonticuloMediciones de donde sacaremos los datos
+    \param	nombreFichero: tipo string, nombre del fichero de donde cargar
+    \return None
+    */
 	void cargarMonticuloDeFichero(std::string const & nombreFichero, ed::MonticuloMediciones & monticulo); 
 
 
+	/*!
+    \brief  Graba los datos de la clase en un fichero
+    \note   Función en el cpp
+    \note	El fichero tiene que estar normalizado
+    \param  monticulo : tipo MonticuloMediciones donde guardaremos los datos
+    \param	nombreFichero: tipo string, nombre del fichero de donde cargar
+    \return None
+    */
 	void grabarMonticuloEnFichero (std::string const & nombreFichero, ed::MonticuloMediciones const & monticulo); 
 
 

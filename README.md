@@ -69,11 +69,27 @@ Además, al cargar un fichero, debe comprobar que un municipio no existe antes d
 
 Entregado: **Lunes, 9 de abril de 2018 a las 15h28.**
 
-Nota obtenida: TBD.
+Nota obtenida: 6,0.
 
 ## Errores detectados durante la corrección de la práctica:
 
-*La práctica aún no se ha corregido.*
++ Podría haber incluido una opción para modificar la cima.
+
++ Al mostrar las mediciones, podría hacer pausas.
+
++ Debe comprobar si la fecha sea correcta
+
+	[3] INSERTAR UNA NUEVA MEDICION.
+	Introduzca los datos de la nueva medicion. [Numero positivo]: 0
+	Introduzca el día. [Rango 1-31]: 31
+	Introduzca el mes. [Rango 1-12]: 2
+	Introduzca el año. [Rango 1900-2099]: 2018
+
++ Debe revisar y corregir los numerosos avisos de doxygen.
+
++ Debe comentar todas las funciones de las clases.
+
++ No ha utilizado las especificiones de las funciones de la clase MonticuloMedicionesInterfaz.
 
 # PRÁCTICA 4: Árbol abarcador de coste mínimo de un grafo no dirigido.
 

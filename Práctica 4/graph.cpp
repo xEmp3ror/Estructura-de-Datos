@@ -9,13 +9,12 @@
 
 double ed::Graph::ponderate(ed::Vertex u, ed::Vertex v) const {
 
-	double res;
-	double totX = pow(u.getDataX() - v.getDataX(), 2);
-	double totY = pow(u.getDataY() - v.getDataX(), 2);
+			double resultado;
+			double totalx = pow(u.getDataX() - v.getDataX(),2);
+			double totaly = pow(u.getDataY() - v.getDataY(),2);
+			resultado = sqrt(totalx + totaly);
+			return resultado;
 
-	res = sqrt(totX + totY);
-
-	return res;
 }
 
 bool ed::Graph::hasAdy(ed::Vertex u, ed::Vertex v) const {
@@ -51,25 +50,18 @@ void ed::Graph::addVertex(double x, double y) {
 }
 
 void ed::Graph::addVertex(ed::Vertex v) {
-	std::cout<<nVertexes()<<std::endl;
 
 	v.setLabel(_vertexes.size() + 1);
 	_vertexes.push_back(v);
-	std::cout<<nVertexes()<<std::endl;	
 	adjust();
-	std::cout<<nVertexes()<<std::endl;
 
 	for (int i = 0; i < nVertexes(); ++i) {
 
 		if(v.getLabel() != _vertexes[i].getLabel()) {
-
 			addEdge(v, _vertexes[i]);
 		}
 	}
-
 	_cursorV =(int) _vertexes.size() - 1 ;
-	std::cout<<nVertexes()<<std::endl;
-	
 }
 
 void ed::Graph::addVertexN(double x, double y) {
@@ -93,8 +85,9 @@ void ed::Graph::addEdge(ed::Vertex v, ed::Vertex u) {
 	l.setItem(ponderate(v, u));
 	l.setFirst(v);
 	l.setSecond(u);
+	 // std::cout<<"xd"<<l.getItem()<<std::endl;
 	_edges.push_back(l);
-
+	// std::cout<<l.getItem()<<std::endl;
 	_matrix[l.getFirst().getLabel()-1][l.getSecond().getLabel()-1] = l.getItem();
 	_matrix[l.getSecond().getLabel()-1][l.getFirst().getLabel()-1] = l.getItem();
 
@@ -111,22 +104,12 @@ void ed::Graph::adjust() {
 
 		_matrix[i].resize(nVertexes(), std::numeric_limits<double>::infinity());
 	}
-
 	for (i = 0; i < nVertexes(); ++i) {
 
 		for (j = 0; j < nVertexes(); ++j) {
-
-			goToEdge(_vertexes[i],_vertexes[j]);
-
 			if(i == j) {
 
 				_matrix[i][j] = 0;
-			
-			} else {
-
-			 	if(!hasCurE()) {
-			 		_matrix[i][j] = std::numeric_limits<double>::infinity();
-			 	}
 			}
 		}
 	}
@@ -148,7 +131,7 @@ void ed::Graph::removeVertex() {
 
 	for (int i = 0; i < (int)_edges.size(); ++i) {
 
-		if(_edges[i].getFirst().getLabel() == _cursorV +1 or _edges[i].getSecond().getLabel() == _cursorV +1) {
+		if(_edges[i].getFirst().getLabel() == (int) _cursorV +1 or _edges[i].getSecond().getLabel() == (int) _cursorV +1) {
 
 			_edges.erase(_edges.begin() + _cursorV);
 		}
@@ -156,13 +139,13 @@ void ed::Graph::removeVertex() {
 
 	for (int i = 0; i < (int)_edges.size(); ++i) {
 
-		if(_edges[i].getFirst().getLabel() > _cursorV +1) {
+		if(_edges[i].getFirst().getLabel() > (int) _cursorV +1) {
 
 			aux2 = _edges[i].getFirst().getLabel() -1;
 			_edges[i].getFirst().setLabel(aux2);
 		}
 
-		if(_edges[i].getSecond().getLabel() > _cursorV +1) {
+		if(_edges[i].getSecond().getLabel() > (int) _cursorV +1) {
 
 			_edges[i].getSecond().setLabel(_edges[i].getSecond().getLabel() -1);
 		}

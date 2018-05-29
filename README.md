@@ -79,11 +79,11 @@ Nota obtenida: 6,0.
 
 + Debe comprobar si la fecha sea correcta
 
-	[3] INSERTAR UNA NUEVA MEDICION.
+	`[3] INSERTAR UNA NUEVA MEDICION.
 	Introduzca los datos de la nueva medicion. [Numero positivo]: 0
 	Introduzca el día. [Rango 1-31]: 31
 	Introduzca el mes. [Rango 1-12]: 2
-	Introduzca el año. [Rango 1900-2099]: 2018
+	Introduzca el año. [Rango 1900-2099]: 2018`
 
 + Debe revisar y corregir los numerosos avisos de doxygen.
 

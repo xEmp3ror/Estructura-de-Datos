@@ -39,7 +39,6 @@ void ed::loadFile(std::string const & fileName, ed::Graph & graph) {
 	}
 
 	while(f>>aux) {
-
 		if(!graph.searchVertex(aux))
 		graph.addVertex(aux);
 	}
@@ -58,7 +57,6 @@ void ed::saveFile(std::string const & fileName, ed::Graph & graph, ed::Graph & g
 	f<<"Vertices (x , y):\n";
 
 	while(graph.hasCurV()) {
-
 		f<<graph.curVertex();
 		graph.nextVertex();
 	}

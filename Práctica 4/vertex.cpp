@@ -22,8 +22,8 @@ namespace ed {
 	std::istream &operator>>(std::istream &stream, ed::Vertex &v) {
 
 		std::string cad,cad2;
-		std::getline(stream,cad,' ');
-		std::getline(stream,cad2);
+		getline(stream,cad,' ');
+		getline(stream,cad2);
 		v.setData(atof(cad.c_str()),atof(cad2.c_str()));
 
 		return stream;

@@ -9,7 +9,7 @@
 #define _AUXILIARES_
 
 #include "macros.hpp"
-#include "Graph.hpp"
+#include "graph.hpp"
 
 namespace ed {
 

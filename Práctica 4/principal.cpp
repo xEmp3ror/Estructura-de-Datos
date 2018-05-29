@@ -163,6 +163,7 @@ int main(){
 					} else {
 
 						std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<"La longitud del árbol abarcador de coste mínimo mediante algoritmo de Kruskal es "<<gKruskal.treeLength()<<" nodos."<<RESET<<std::endl;
+						break;
 					}
 			case 8:
 					std::cout << "[8] AGREGAR VÉRTICE AL GRAFO." << std::endl;
@@ -178,7 +179,6 @@ int main(){
 
 				  	v.setData(x, y);
 				  	g.findFirstV(x, y);
-
 				  	if (g.hasCurV()) {
 
 				  		std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" El grafo ya contiene este vértice."<<RESET<<std::endl;

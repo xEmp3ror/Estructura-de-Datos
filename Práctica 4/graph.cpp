@@ -50,6 +50,24 @@ void ed::Graph::addVertex(double x, double y) {
 	_cursorV =(int) _vertexes.size() - 1 ;
 }
 
+void ed::Graph::addVertex(ed::Vertex v) {
+
+	v.setLabel(_vertexes.size() + 1);
+	_vertexes.push_back(v);
+	
+	adjust();
+
+	for (int i = 0; i < nVertexes(); ++i) {
+
+		if(v.getLabel() != _vertexes[i].getLabel()) {
+
+			addEdge(v, _vertexes[i]);
+		}
+	}
+
+	_cursorV =(int) _vertexes.size() - 1 ;
+}
+
 void ed::Graph::addVertexN(double x, double y) {
 
 	ed::Vertex a;

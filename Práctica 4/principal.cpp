@@ -19,7 +19,7 @@ int main(){
 	ed::Graph  gPrim;
 	ed::Vertex v;
 
-	int index;
+	int index, origin, destiny;
 
 	double x, y;
 
@@ -189,8 +189,8 @@ int main(){
 				  	g.addVertex(v);
 
 				  	std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIGREEN<<" Vértice añadido correctamente."<<RESET<<std::endl;
-
 				  	std::cin.ignore();
+
 					break;
 			case 9:
 					std::cout << "[9] BORRAR VÉRTICE DEL GRAFO." << std::endl;
@@ -225,6 +225,7 @@ int main(){
 					}
 
 					g.removeVertex();
+
 					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIGREEN<<" Vértice borrado correctamente."<<RESET<<std::endl;
 					std::cin.ignore();
 
@@ -241,19 +242,92 @@ int main(){
 					}
 
 					std::cout<<RESET<<std::endl;
-					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Introduzca el vértice que quiere borrar [1 - "<<g.nVertexes()<<"]: "<<GREEN;
-				  	std::cin>>index;
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Introduzca vértice de origen [1 - "<<g.nVertexes()<<"]: "<<GREEN;
+				  	std::cin>>origin;
 				  	std::cout<<RESET<<std::endl;
+
+				  	if(not((origin <= g.nVertexes()) && (origin > 0.0))) {
+
+						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" El vértice de Origen es incorrecto."<<RESET<<std::endl;
+						std::cin.ignore();
+						break;
+					}
+
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Introduzca vértice de destino [1 - "<<g.nVertexes()<<"]: "<<GREEN;
+				  	std::cin>>destiny;
+				  	std::cout<<RESET<<std::endl;
+
+				  	if(not((destiny <= g.nVertexes()) && (destiny > 0.0)) or (origin == destiny)) {
+
+						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" El vértice de Origen es incorrecto."<<RESET<<std::endl;
+						std::cin.ignore();
+						break;
+					}
+
+					g.goToEdge(g.getVertex(origin), g.getVertex(destiny));
+
+					if(g.hasCurE()) {
+
+						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" El grafo ya contiene ese lado."<<RESET<<std::endl;
+						std::cin.ignore();
+						break;
+					}
+
+					g.addEdge(g.getVertex(origin),g.getVertex(destiny));
+
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIGREEN<<" Lado añadido correctamente."<<RESET<<std::endl;
+					std::cin.ignore();
 
 					break;
 			case 11:
 					std::cout << "[11] BORRAR LADO DEL GRAFO." << std::endl;
 
-					std::cout<<std::endl;
-					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Vuelva en otro momento..."<<RESET<<std::endl;
+					if (g.isEmpty()) {
+
+						std::cout<<RESET<<std::endl;
+						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" No se puede borrar ningún lado: el grafo está vacío."<<RESET<<std::endl;
+
+						break;
+					}
+
+					std::cout<<RESET<<std::endl;
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Introduzca el primer vértice del lado que quiere borrar [1 - "<<g.nVertexes()<<"]: "<<GREEN;
+				  	std::cin>>origin;
+				  	std::cout<<RESET<<std::endl;
+
+				  	if(not((origin <= g.nVertexes()) && (origin > 0.0))) {
+
+						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" El vértice de Origen es incorrecto."<<RESET<<std::endl;
+						std::cin.ignore();
+						break;
+					}
+
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Introduzca el segundo vértice del lado que quiere borrar [1 - "<<g.nVertexes()<<"]: "<<GREEN;
+				  	std::cin>>destiny;
+				  	std::cout<<RESET<<std::endl;
+
+				  	if(not((destiny <= g.nVertexes()) && (destiny > 0.0)) or (origin == destiny)) {
+
+						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" El vértice de Origen es incorrecto."<<RESET<<std::endl;
+						std::cin.ignore();
+						break;
+					}
+
+					g.goToEdge(g.getVertex(origin),g.getVertex(destiny));
+
+					if(!g.hasCurE()) {
+
+						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" El lado no es correcto o no está contenido en el grafo."<<RESET<<std::endl;
+						std::cin.ignore();
+						break;
+					}
+
+					g.removeEdge();
+
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIGREEN<<" Lado borrado correctamente."<<RESET<<std::endl;
+					std::cin.ignore();
 
 					break;
-
 
 			default:
 				std::cout << BIRED;

@@ -5,7 +5,7 @@ En este repositorio se encontrarán todas las prácticas resueltas.
 
 ## Work in progress.
 
-+ Cambiar todos los `toUnisgned()` para que anuncie el error de que es negativo. **DONE.**
++ Nothing.
 
 # PRÁCTICA 1: Vectores libres de tres dimensiones.
 
@@ -93,7 +93,7 @@ Nota obtenida: 6,0.
 
 # PRÁCTICA 4: Árbol abarcador de coste mínimo de un grafo no dirigido.
 
-Entrega: _Miércoles, 30 de mayo de 2018 a las 09h00._
+Entregado: **Martes, 30 de mayo a las 0h40.**
 
 Nota obtenida: TBD
 

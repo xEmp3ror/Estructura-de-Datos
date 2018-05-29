@@ -30,8 +30,9 @@ namespace ed {
         private:
 			/// Etiqueta del vértice.
 			int _label;
-			/// Dato del vértice.
+			/// Abcisa del vértice.
 			double _x;
+            ///Ordenada del vértice.
             double _y;
         public:
 			/** @name Observadores. */

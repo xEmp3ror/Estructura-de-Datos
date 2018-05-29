@@ -12,6 +12,10 @@
 #include "vertex.hpp"
 #include "graph.hpp"
 
+/**
+*@brief Menú principal.
+*/
+
 int main(){
 
 	ed::Graph  g;
@@ -97,11 +101,15 @@ int main(){
 
 						std::cout<<RESET<<std::endl;
 						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" La matriz no puede mostrarse: el grafo está vacío."<<RESET<<std::endl;
+						std::cout<<RESET<<std::endl;
 
 						break;
 					}
 
 					std::cout<<RESET<<std::endl;
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Matriz de Adyacencias:"<<RESET<<std::endl;
+					std::cout<<RESET<<std::endl;
+
 					g.printMatrix();
 					break;
 			case 5:
@@ -117,7 +125,9 @@ int main(){
 
 					gPrim = g.algorithmPrim();
 
-					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<"Resultado del algoritmo:"<<RESET<<std::endl;
+					std::cout<<RESET<<std::endl;
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Resultado del algoritmo:"<<RESET<<std::endl;
+					std::cout<<RESET<<std::endl;
 
 					gPrim.printMatrix();
 
@@ -135,7 +145,9 @@ int main(){
 
 					gKruskal = g.algorithmKruskal();
 
-					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<"Resultado del algoritmo:"<<RESET<<std::endl;
+					std::cout<<RESET<<std::endl;
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Resultado del algoritmo:"<<RESET<<std::endl;
+					std::cout<<RESET<<std::endl;
 
 					gKruskal.printMatrix();
 
@@ -151,18 +163,21 @@ int main(){
 
 					} else {
 
-						std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<"La longitud del árbol abarcador de coste mínimo mediante algoritmo de Prim es "<<gPrim.treeLength()<<" nodos."<<RESET<<std::endl;
+						std::cout<<RESET<<std::endl;
+						std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" La longitud del árbol abarcador de coste mínimo mediante algoritmo de Prim es "<<gPrim.treeLength()<<"."<<RESET<<std::endl;
 					}
 
 					if (gPrim.isEmpty()) {
 
+						std::cout<<RESET<<std::endl;
 						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" El arbol de coste mínimo mediante Kruskal no puede ser mostrado: el grafo está vacío."<<RESET<<std::endl;
 
 						break;
 
 					} else {
 
-						std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<"La longitud del árbol abarcador de coste mínimo mediante algoritmo de Kruskal es "<<gKruskal.treeLength()<<" nodos."<<RESET<<std::endl;
+						std::cout<<RESET<<std::endl;
+						std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" La longitud del árbol abarcador de coste mínimo mediante algoritmo de Kruskal es "<<gKruskal.treeLength()<<"."<<RESET<<std::endl;
 						break;
 					}
 			case 8:

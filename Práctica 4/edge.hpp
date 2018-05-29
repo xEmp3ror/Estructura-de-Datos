@@ -73,7 +73,7 @@ namespace ed {
 
             /**
             * @brief Fija el dato del lado.
-            * @param data Dato del lado (T).
+            * @param item Dato del lado (double).
             */
             inline void setItem(const double & item) { _item = item; }
 

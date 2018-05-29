@@ -19,7 +19,10 @@ int main(){
 	ed::Graph  gPrim;
 	ed::Vertex v;
 
-	std::string aux;
+	int index;
+
+	double x, y;
+
 	std::string inputName;
 	std::string outputName;
 
@@ -164,22 +167,83 @@ int main(){
 			case 8:
 					std::cout << "[8] AGREGAR VÉRTICE AL GRAFO." << std::endl;
 
-					std::cout<<std::endl;
-					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Vuelva en otro momento..."<<RESET<<std::endl;
+					std::cout<<RESET<<std::endl;
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Introduzca la abcisa [X] del vértice: "<<GREEN;
+				  	std::cin>>x;
+				  	std::cout<<RESET<<std::endl;
 
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Introduzca la ordenada [Y] del vértice: "<<GREEN;
+				  	std::cin>>y;
+				  	std::cout<<RESET<<std::endl;
+
+				  	v.setData(x, y);
+				  	g.findFirstV(x, y);
+
+				  	if (g.hasCurV()) {
+
+				  		std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" El grafo ya contiene este vértice."<<RESET<<std::endl;
+				  		std::cin.ignore();
+				  		break;
+				  	}
+
+				  	g.addVertex(v);
+
+				  	std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIGREEN<<" Vértice añadido correctamente."<<RESET<<std::endl;
+
+				  	std::cin.ignore();
 					break;
 			case 9:
 					std::cout << "[9] BORRAR VÉRTICE DEL GRAFO." << std::endl;
 
-					std::cout<<std::endl;
-					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Vuelva en otro momento..."<<RESET<<std::endl;
+					if (g.isEmpty()) {
+
+						std::cout<<RESET<<std::endl;
+						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" Ningún vértice puede ser borrado: el grafo está vacío."<<RESET<<std::endl;
+
+						break;
+					}
+
+					std::cout<<RESET<<std::endl;
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Introduzca el vértice que quiere borrar [1 - "<<g.nVertexes()<<"]: "<<GREEN;
+				  	std::cin>>index;
+				  	std::cout<<RESET<<std::endl;
+
+				  	if(not((index <= g.nVertexes()) && (index > 0.0))) {
+
+						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" El vértice no existe."<<RESET<<std::endl;
+						std::cin.ignore();
+						break;
+					}
+
+					g.goToVertex(g.getVertex(index));
+
+					if(!g.hasCurV()) {
+
+						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" El vértice no existe."<<RESET<<std::endl;
+						std::cin.ignore();
+						break;
+					}
+
+					g.removeVertex();
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIGREEN<<" Vértice borrado correctamente."<<RESET<<std::endl;
+					std::cin.ignore();
 
 					break;
 			case 10:
 					std::cout << "[10] AGREGAR LADO AL GRAFO." << std::endl;
 
-					std::cout<<std::endl;
-					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Vuelva en otro momento..."<<RESET<<std::endl;
+					if (g.isEmpty()) {
+
+						std::cout<<RESET<<std::endl;
+						std::cout<<BIRED<<INVERSE<<"[!] ERROR "<<RESET<<BIRED<<" No se puede agregar un lado: el grafo está vacío."<<RESET<<std::endl;
+
+						break;
+					}
+
+					std::cout<<RESET<<std::endl;
+					std::cout<<BIBLUE<<INVERSE<<"[i] INFORMACIÓN "<<RESET<<BIYELLOW<<" Introduzca el vértice que quiere borrar [1 - "<<g.nVertexes()<<"]: "<<GREEN;
+				  	std::cin>>index;
+				  	std::cout<<RESET<<std::endl;
 
 					break;
 			case 11:

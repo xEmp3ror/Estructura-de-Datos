@@ -51,11 +51,13 @@ void ed::Graph::addVertex(double x, double y) {
 }
 
 void ed::Graph::addVertex(ed::Vertex v) {
+	std::cout<<nVertexes()<<std::endl;
 
 	v.setLabel(_vertexes.size() + 1);
 	_vertexes.push_back(v);
-	
+	std::cout<<nVertexes()<<std::endl;	
 	adjust();
+	std::cout<<nVertexes()<<std::endl;
 
 	for (int i = 0; i < nVertexes(); ++i) {
 
@@ -66,6 +68,8 @@ void ed::Graph::addVertex(ed::Vertex v) {
 	}
 
 	_cursorV =(int) _vertexes.size() - 1 ;
+	std::cout<<nVertexes()<<std::endl;
+	
 }
 
 void ed::Graph::addVertexN(double x, double y) {

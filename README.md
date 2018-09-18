@@ -93,10 +93,27 @@ Nota obtenida: 6,0.
 
 # PRÁCTICA 4: Árbol abarcador de coste mínimo de un grafo no dirigido.
 
-Entregado: **Martes, 30 de mayo a las 0h40.**
+Entregado: **Miercoles, 30 de mayo a las 0h40.**
 
-Nota obtenida: TBD
+Nota obtenida: 6,5.
 
 ## Errores detectados durante la corrección de la práctica:
 
-*La práctica aún no se ha corregido.*
++ Podría mostrar los vértices.
+
+	[3] MOSTRAR NÚMERO DE ELEMENTOS DEL GRAFO.
+
+	[i] INFORMACIÓN  El grafo tiene 5 vértices.
+
++ El resultado debe ser 11.
+ 
+	[7] TAMAÑO DEL ARBOL ABARCADOR DE COSTE MÍNIMO.
+
+	[i] INFORMACIÓN  La longitud del árbol abarcador de coste mínimo mediante algoritmo de Prim es 13.
+
++ Se recomienda que codifique las funciones de las clases en el fichero cpp; las funciones elementales pueden estar en el hpp
++ Los algoritmos de Prim y Kruskal deberían estar codificados en funcionesAuxiliares.cpp
++ Los nombres de las funciones deben ser auto-descriptivos
++ Doxygen:
+   - Falta mainpage
+   - Debe comentar todas las funciones de las clases
